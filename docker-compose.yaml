@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  my-alpine:
+    container_name: my-golang
+    image: my-golang
+    #ports:
+    #  - "1234:1234"
+    #map the volumes
+    #command: tail -F anything
+    #volumes:
+    #  - $PWD/:/usr/local/etc/ 
+
+  adminer:
+    container_name: my-adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  db:
+    container_name: my-mysql
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: me
+      MYSQL_PASSWORD: hithere
+      MYSQL_DATABASE: managementEquipment

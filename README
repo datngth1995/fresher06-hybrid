@@ -1,0 +1,14 @@
+go get github.com/gin-gonic/gin
+go get gorm.io/gorm 
+go get gorm.io/driver/mysql
+go get -v github.com/rubenv/sql-migrate/...
+
+
+docker-compose up -d
+
+Directory layout:
+    - common:
+    - controllers: includes all handlers method
+    - db: has configuration to connect to mysql, migration & seed file, connect to database and return gorm.DB connection object
+    - models: has all database interaction related methods
+    - view:
