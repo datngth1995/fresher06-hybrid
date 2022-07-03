@@ -9,6 +9,7 @@ require (
 	github.com/armon/go-radix v0.0.0-20180808171621-7fddfc383310 // indirect
 	github.com/bgentry/speakeasy v0.1.0 // indirect
 	github.com/denisenkom/go-mssqldb v0.9.0 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.8.1 // indirect
@@ -48,7 +49,8 @@ require (
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d // indirect
 	golang.org/x/net v0.0.0-20220630215102-69896b714898 // indirect
-	golang.org/x/sys v0.0.0-20220627191245-f75cf1eec38b // indirect
+	golang.org/x/sys v0.0.0-20220702020025-31831981b65f // indirect
+	golang.org/x/term v0.0.0-20220526004731-065cf7ba2467 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect

@@ -2,9 +2,12 @@ go get github.com/gin-gonic/gin
 go get gorm.io/gorm 
 go get gorm.io/driver/mysql
 go get -v github.com/rubenv/sql-migrate/...
-
+go get -u golang.org/x/crypto/...
+go get github.com/dgrijalva/jwt-go
 
 docker-compose up -d
+
+https://github.com/viettranx/go-food-delivery
 
 Directory layout:
     - common:
