@@ -4,4 +4,10 @@ all:
 build:
 	docker build -t my-golang -f Dockerfile .
 
-.PHONY: all build
+migrateup:
+	migrate -path db/migration -database "mysql://me:hithere@tcp(localhost:3306)/managementEquipment?x-no-lock=true" -verbose up
+
+migratedown:
+	migrate -path db/migration -database "mysql://me:hithere@tcp(localhost:3306)/managementEquipment?x-no-lock=true" -verbose down
+
+.PHONY: all build migrateup migratedown

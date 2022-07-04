@@ -128,6 +128,6 @@ INSERT INTO roles (name) VALUES ('admin');
 INSERT INTO roles (name) VALUES ('it');
 INSERT INTO roles (name) VALUES ('user');
 
-INSERT INTO users (name, email, phone, role_id, password) VALUES ('Taylor Swift', 'taylor@gmail.com', '0123456789', 1, '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO users (name, email, phone, role_id, password) VALUES ('Taylor Swift', 'taylor@gmail.com', '$2a$04$z.uj2jgIPdC2dGmC9Dtl..aZS.kYBV3zUsDm1X5d9XFbEaavRHoNq', 1, '81dc9bdb52d04dc20036dbd8313ed055');
 INSERT INTO users (name, email, phone, role_id, password) VALUES ('Clean Bandit', 'clean@gmail.com', '0987654321', 2, '81dc9bdb52d04dc20036dbd8313ed055');
 INSERT INTO users (name, email, phone, role_id, password) VALUES ('Dua Lipa', 'dua@gmail.com', '0159763248', 3, '81dc9bdb52d04dc20036dbd8313ed055');
