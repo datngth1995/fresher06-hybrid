@@ -71,6 +71,8 @@ func ConnectToDB() (*gorm.DB, error) {
 	mySQLInfo := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=%s&loc=%s",
 		config.Username, config.Password, config.Host, config.Port, config.Dbname, config.Charset, config.ParseTime, config.Loc)
 
+	fmt.Println(mySQLInfo)
+
 	db, err := gorm.Open(mysql.Open(mySQLInfo), &gorm.Config{})
 
 	fmt.Println(db, err)
@@ -83,10 +85,10 @@ func ConnectToDB() (*gorm.DB, error) {
 	db = db.Debug()
 
 	//Migration & Seed into database
-	if err := MigrationDB(db); err != nil {
+	/*if err := MigrationDB(db); err != nil {
 		fmt.Println(fmt.Sprint(err))
 		return nil, err
-	}
+	}*/
 
 	return db, nil
 }

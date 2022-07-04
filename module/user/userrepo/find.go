@@ -2,12 +2,10 @@ package userrepo
 
 import (
 	"programming_fresher/common"
-
-	"golang.org/x/crypto/bcrypt"
 )
 
 type FindUser interface {
-	findUserStorage(conditions map[string]interface{}) (*common.UserInfo, error)
+	FindUserStorage(conditions map[string]interface{}) (*common.UserInfo, error)
 }
 
 type findUser struct {
@@ -18,18 +16,13 @@ func NewFindUser(s FindUser) *findUser {
 	return &findUser{store: s}
 }
 
-func (s *findUser) FindUser(userLogin *common.UserInfo) (*common.Account, error) {
-	data, err := s.store.findUserStorage(map[string]interface{}{"email": userLogin.Email})
+func (s *findUser) FindUser(conditions map[string]interface{}) (*common.UserInfo, error) {
+	data, err := s.store.FindUserStorage(conditions)
 
 	if err != nil {
 		return nil, err
 	}
 
-	if err := bcrypt.CompareHashAndPassword([]byte(data.Password),
-		[]byte(userLogin.Password)); err != nil {
-		return nil, common.ErrorAuthentication(err)
-	}
-
-	//generate token
+	return data, nil
 
 }

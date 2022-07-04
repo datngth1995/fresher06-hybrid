@@ -4,7 +4,7 @@ import (
 	"programming_fresher/common"
 )
 
-func (s *userMySQL) findUserStorage(conditions map[string]interface{}) (*common.UserInfo, error) {
+func (s *userMySQL) FindUserStorage(conditions map[string]interface{}) (*common.UserInfo, error) {
 	var data common.UserInfo
 	db := s.db.Table(common.UserInfo{}.TableName())
 

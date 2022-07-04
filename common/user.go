@@ -1,7 +1,6 @@
 package common
 
 import (
-	"go/token"
 	"time"
 )
 
@@ -10,7 +9,7 @@ type UserInfo struct {
 	Email     string     `json:"email" gorm:"column:email;"`
 	Name      string     `json:"name" gorm:"colum:name;"`
 	Phone     string     `json:"phone" gorm:"column:phone;"`
-	RoleId    string     `json:"role_id" gorm:"column:role_id;"`
+	RoleId    int        `json:"role_id" gorm:"column:role_id;"`
 	Password  string     `json:"password" gorm:"column:password;"`
 	CreatedAt *time.Time `json:"created_at" gorm:"column:created_at;"`
 	UpdatedAt *time.Time `json:"updated_at" gorm:"column:updated_at;"`
@@ -27,10 +26,9 @@ type UserLogin struct {
 }
 
 type Account struct {
-	AccessToken  *token.Token `json:"access_token"`
-	RefreshToken *token.Token `json:"refresh_token"`
+	AccessToken string `json:"access_token"`
 }
 
-func NewAccount(atok, rtok *token.Token) *Account {
-	return &Account{AccessToken: atok, RefreshToken: rtok}
+func NewAccount(atok string) *Account {
+	return &Account{AccessToken: atok}
 }
